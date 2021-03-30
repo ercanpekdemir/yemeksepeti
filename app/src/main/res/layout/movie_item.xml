@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.moviedb.movie.data.res.Movie" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:src_glide="@{item.attributionPosterPath}"
+            />
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:layout_marginBottom="33dp"
+            android:layout_marginStart="3dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            tools:text="7.9"
+            android:text="@{item.attributeVoteAverage}"/>
+
+
+        <TextView
+            android:layout_marginTop="100dp"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:singleLine="true"
+            tools:text="movie title"
+            android:text="@{item.title}"/>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

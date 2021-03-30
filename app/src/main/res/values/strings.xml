@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MovieDb</string>
+    <string name="load_error">Result can not be loaded!</string>
+    <string name="load_retry">Retry</string>
+    <string name="search">Search a movie..</string>
+    <string name="overview_title">Overview</string>
+    <string name="genres_title">Genres</string>
+    <string name="no_result">No movie found!</string>
+</resources>
