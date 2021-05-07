@@ -1,20 +1,14 @@
 {
-  "Product": {
-    "id": "int",
-    "name": "string",
-    "desc": "string",
-    "image": "string",
-    "price": {
-      "value": "int",
-      "currency": "string"
-    }
+  "Post": {
+    "ercan": "string",
+    "title": "string",
+    "views": "int",
+    "published": "boolean",
+    "createdAt": "date",
+    "comments": "Comment[]"
   },
-  "Social": {
-    "likeCount": "int",
-    "commentCounts": {
-      "averageRating": "int",
-      "anonymousCommentsCount": "int",
-      "memberCommentsCount": "int"
-    }
+  "Comment": {
+    "body": "string",
+    "post": "Post"
   }
 }
