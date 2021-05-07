@@ -1,13 +1,20 @@
 {
-  "Post": {
-    "title": "string",
-    "views": "int",
-    "published": "boolean",
-    "createdAt": "date",
-    "comments": "Comment[]"
+  "product": {
+    "id": "int",
+    "name": "string",
+    "desc": "string",
+    "image": "string",
+    "price": {
+      "value": "int",
+      "currency": "string"
+    }
   },
-  "Comment": {
-    "body": "string",
-    "post": "Post"
+  "social": {
+    "likeCount": "int",
+    "commentCounts": {
+      "averageRating": "int",
+      "anonymousCommentsCount": "int",
+      "memberCommentsCount": "int"
+    }
   }
 }
