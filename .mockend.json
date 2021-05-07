@@ -1,5 +1,5 @@
 {
-  "product": {
+  "Product": {
     "id": "int",
     "name": "string",
     "desc": "string",
@@ -9,7 +9,7 @@
       "currency": "string"
     }
   },
-  "social": {
+  "Social": {
     "likeCount": "int",
     "commentCounts": {
       "averageRating": "int",
