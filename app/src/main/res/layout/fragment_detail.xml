@@ -14,13 +14,6 @@
         android:layout_height="match_parent"
         app:backdrop_glide="@{viewModel.moveBackdropObservable}">
 
-        <com.moviedb.components.labelview.LabelView
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:viewData="@{viewModel.labelObservable}"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="0dp"
@@ -57,6 +50,16 @@
             </LinearLayout>
 
         </androidx.appcompat.widget.Toolbar>
+
+
+
+        <com.moviedb.components.circularcountdown.CircularCountDownView
+            android:id="@+id/countdown"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:viewData="@{viewModel.countDownObservable}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/poster"

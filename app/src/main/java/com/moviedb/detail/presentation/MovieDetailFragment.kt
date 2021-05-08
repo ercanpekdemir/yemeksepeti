@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.m.base.ui.BaseFragment
 import com.moviedb.R
+import com.moviedb.components.circularcountdown.CircularCountDownViewHandler
 import com.moviedb.databinding.FragmentDetailBinding
 import com.moviedb.detail.interactor.GetMovieDetail
 import com.moviedb.movie.data.res.Movie
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MovieDetailFragment: BaseFragment<MovieDetailViewModel, FragmentDetailBinding>() {
+class MovieDetailFragment: BaseFragment<MovieDetailViewModel, FragmentDetailBinding>(), CircularCountDownViewHandler {
 
     companion object {
         const val TAG = "MovieDetailFragment"
@@ -50,6 +51,8 @@ class MovieDetailFragment: BaseFragment<MovieDetailViewModel, FragmentDetailBind
 
         viewModel.getMovieDetail(GetMovieDetailObserver(viewModel) ,GetMovieDetail.Params(viewModel.movie?.id))
 
+        binding.countdown.setHandler(this)
+
         return view
     }
 
@@ -67,5 +70,9 @@ class MovieDetailFragment: BaseFragment<MovieDetailViewModel, FragmentDetailBind
 
     override fun hideLoading() {
         viewModel.progressObservable.set(View.GONE)
+    }
+
+    override fun handleClick() {
+        println("hobaaaaaaaaaaa")
     }
 }
