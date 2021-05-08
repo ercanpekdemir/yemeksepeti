@@ -6,6 +6,7 @@ import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import com.m.base.ui.BaseViewModel
+import com.moviedb.components.labelview.LabelViewData
 import com.moviedb.detail.data.res.MovieDetailResponse
 import com.moviedb.detail.interactor.GetMovieDetail
 import com.moviedb.detail.presentation.MovieDetailFragment.Companion.MOVIE_ARG
@@ -19,7 +20,7 @@ class MovieDetailViewModel @Inject constructor(
     private val getMovieDetail: GetMovieDetail
 ) : BaseViewModel() {
 
-
+    val labelObservable = ObservableField(LabelViewData(90))
     val progressObservable = ObservableField(View.GONE)
     val moveTitleObservable = ObservableField<String>()
     val moveOverviewObservable = ObservableField<String>()

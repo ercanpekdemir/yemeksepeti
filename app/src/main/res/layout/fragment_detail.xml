@@ -14,6 +14,13 @@
         android:layout_height="match_parent"
         app:backdrop_glide="@{viewModel.moveBackdropObservable}">
 
+        <com.moviedb.components.labelview.LabelView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:viewData="@{viewModel.labelObservable}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="0dp"
