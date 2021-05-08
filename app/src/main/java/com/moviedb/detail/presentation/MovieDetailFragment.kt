@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import com.m.base.ui.BaseFragment
 import com.moviedb.R
 import com.moviedb.databinding.FragmentDetailBinding
+import com.moviedb.detail.interactor.GetMovieDetail
 import com.moviedb.movie.data.res.Movie
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -47,7 +48,7 @@ class MovieDetailFragment: BaseFragment<MovieDetailViewModel, FragmentDetailBind
             dismiss()
         }
 
-        viewModel.getMovieDetail(viewModel.movie?.id)
+        viewModel.getMovieDetail(GetMovieDetailObserver(viewModel) ,GetMovieDetail.Params(viewModel.movie?.id))
 
         return view
     }

@@ -1,8 +1,5 @@
 {
   "Post": {
-    "ercan": {
-      "xxxx": "int"
-    },
     "title": "string",
     "views": "int",
     "published": "boolean",

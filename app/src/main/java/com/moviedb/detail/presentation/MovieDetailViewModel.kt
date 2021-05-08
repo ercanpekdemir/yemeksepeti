@@ -30,8 +30,8 @@ class MovieDetailViewModel @Inject constructor(
 
     var movie: Movie? = null
 
-    fun getMovieDetail(movieId: Int?) {
-        getMovieDetail.execute(GetMovieDetailObserver(this), GetMovieDetail.Params(movieId))
+    fun getMovieDetail(observer: GetMovieDetailObserver, params: GetMovieDetail.Params) {
+        getMovieDetail.execute(observer, params)
     }
 
     fun parseArguments(arguments: Bundle?) {

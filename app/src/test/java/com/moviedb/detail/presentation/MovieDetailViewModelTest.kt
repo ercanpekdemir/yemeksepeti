@@ -5,15 +5,12 @@ import androidx.lifecycle.SavedStateHandle
 import com.moviedb.detail.data.res.MovieDetailResponse
 import com.moviedb.detail.interactor.GetMovieDetail
 import com.moviedb.movie.data.res.Movie
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
 import org.junit.runner.RunWith
-import org.mockito.ArgumentCaptor
 import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.Mockito
-import org.mockito.Mockito.any
 import org.mockito.Mockito.verify
 import org.mockito.runners.MockitoJUnitRunner
 
@@ -26,6 +23,12 @@ class MovieDetailViewModelTest {
     @Mock
     lateinit var getMovieDetail: GetMovieDetail
 
+    @Mock
+    lateinit var observer: GetMovieDetailObserver
+
+    @Mock
+    lateinit var param: GetMovieDetail.Params
+
     @InjectMocks
     lateinit var viewModel: MovieDetailViewModel
 
@@ -33,13 +36,10 @@ class MovieDetailViewModelTest {
     fun getMovieDetail() {
         // given
         val movieId = 674223
-        val captor = ArgumentCaptor.forClass(GetMovieDetailObserver::class.java)
-        val captor1 = ArgumentCaptor.forClass(GetMovieDetail.Params::class.java)
         // when
-        Mockito.`when`(getMovieDetail.execute(captor.capture(), captor1.capture())).thenReturn(Unit)
-        viewModel.getMovieDetail(movieId)
+        viewModel.getMovieDetail(observer, param)
         // then
-        verify(getMovieDetail).execute(any(), any())
+        verify(getMovieDetail).execute(observer, param)
     }
 
     @Test
