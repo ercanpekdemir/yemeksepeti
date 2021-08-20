@@ -1,14 +1,3 @@
-### ********************************************************************************
-## Yemeksepeti challenge accepted by *Ercan Pekdemir*
-
-1. `MVVM + Clean` architecture applied.
-2. `Dagger Hilt` used as a DI.
-3. `:base` module added as a library that contain android main building blocks derived base classes such as BaseViewModel, BaseActivity etc..
-4. `Glide` 3rd party library used for remote resources.
-5. `Retrofit` 3rd party library used for network calls.
-6. `Paging3` used for infinite scrolling.
-### ********************************************************************************
-
 ## Yemeksepeti Android Challenge
 
 Please read the following instructions carefully and make sure that you fulfill
